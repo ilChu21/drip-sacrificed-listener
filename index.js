@@ -69,4 +69,5 @@ async function main() {
   setInterval(resetLargestSacrificed, 4 * 60 * 60 * 1000);
 }
 
+bot.sendMessage(process.env.CHAT_ID, `Bot starting...`, opts);
 main();
