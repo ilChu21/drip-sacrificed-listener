@@ -41,9 +41,7 @@ async function handleEvent(from, to, value, event) {
           `[Drip Sacrificed](https://bscscan.com/tx/${
             event.transactionHash
           }): ${ethers.utils.formatEther(valueBN.toString())}\n
-Largest Drip Sacrificed: ${ethers.utils.formatEther(
-            largestSacrificed.toString()
-          )}
+Largest Sacrificed: ${ethers.utils.formatEther(largestSacrificed.toString())}
           `,
           opts
         );
@@ -55,11 +53,7 @@ Largest Drip Sacrificed: ${ethers.utils.formatEther(
 async function resetLargestSacrificed() {
   largestSacrificed = ethers.BigNumber.from(0);
   processedHashes.clear();
-  bot.sendMessage(
-    process.env.CHAT_ID,
-    `🔥 Largest Drip Sacrificed Reset 🔥`,
-    opts
-  );
+  bot.sendMessage(process.env.CHAT_ID, `🔥 Largest Sacrificed Reset 🔥`, opts);
 }
 
 async function main() {
